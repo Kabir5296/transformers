@@ -1348,7 +1348,7 @@ class Wav2Vec2BertForPreTraining(Wav2Vec2BertPreTrainedModel):
     # Copied from transformers.models.wav2vec2.modeling_wav2vec2.Wav2Vec2ForPreTraining.forward with Wav2Vec2->Wav2Vec2Conformer,wav2vec2->wav2vec2_conformer,wav2vec2_conformer-base->wav2vec2-conformer-rel-pos-large
     def forward(
         self,
-        input_values: Optional[torch.Tensor],
+        input_features: Optional[torch.Tensor],
         attention_mask: Optional[torch.Tensor] = None,
         mask_time_indices: Optional[torch.BoolTensor] = None,
         sampled_negative_indices: Optional[torch.BoolTensor] = None,
@@ -1419,7 +1419,7 @@ class Wav2Vec2BertForPreTraining(Wav2Vec2BertPreTrainedModel):
             mask_time_indices = mask_time_indices.to(torch.bool)
 
         outputs = self.wav2vec2_bert(
-            input_values,
+            input_features,
             attention_mask=attention_mask,
             output_attentions=output_attentions,
             output_hidden_states=output_hidden_states,
