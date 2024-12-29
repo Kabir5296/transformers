@@ -56,6 +56,7 @@ if TYPE_CHECKING:
             Wav2Vec2BertForXVector,
             Wav2Vec2BertModel,
             Wav2Vec2BertPreTrainedModel,
+            Wav2Vec2BertForPreTraining,
         )
 
 else:
